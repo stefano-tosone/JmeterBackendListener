@@ -1,0 +1,10 @@
+it\altran\jmeter\visualizers\backend\influxdb\InfluxdbMetricsSender.class
+it\altran\jmeter\visualizers\backend\graphite\GraphiteMetricsSender$MetricTuple.class
+it\altran\jmeter\visualizers\backend\influxdb\AbstractInfluxdbMetricsSender.class
+it\altran\jmeter\visualizers\backend\influxdb\HttpMetricsSender.class
+it\altran\jmeter\visualizers\backend\graphite\GraphiteMetricsSender.class
+it\altran\jmeter\visualizers\backend\graphite\AbstractGraphiteMetricsSender.class
+it\altran\jmeter\visualizers\backend\influxdb\InfluxdbBackendListenerClientFromJtl.class
+it\altran\jmeter\visualizers\backend\graphite\GraphiteFakeBackendListenerClient.class
+it\altran\jmeter\visualizers\backend\influxdb\InfluxdbMetricsSender$MetricTuple.class
+it\altran\jmeter\visualizers\backend\influxdb\HttpMetricsSender$1.class
