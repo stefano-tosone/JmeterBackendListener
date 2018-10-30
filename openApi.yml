@@ -1,0 +1,766 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: emv-backend
+basePath: /api
+paths:
+  /physicaldimensions:
+    post:
+      tags:
+        - physicaldimension
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: physicaldimension.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/physicaldimension'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/physicaldimension'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'            
+      deprecated: false
+    get:
+      tags:
+        - physicaldimension
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: physicaldimension.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/physicaldimension'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'              
+      deprecated: false
+  '/physicaldimensions/{id}':
+    get:
+      tags:
+        - physicaldimension
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: physicaldimension.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/physicaldimension'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'            
+      deprecated: false
+    delete:
+      tags:
+        - physicaldimension
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: physicaldimension.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'            
+      deprecated: false
+    patch:
+      tags:
+        - physicaldimension
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: physicaldimension.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: physicaldimension id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/physicaldimension'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/physicaldimension'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'            
+      deprecated: false
+  /virtualmeters:
+    post:
+      tags:
+        - virtualmeter
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: virtualmeter.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/virtualmeter'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/virtualmeter'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'            
+      deprecated: false
+    get:
+      tags:
+        - virtualmeter
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: virtualmeter.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/virtualmeter'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'  
+      deprecated: false
+  '/virtualmeters/{id}':
+    get:
+      tags:
+        - virtualmeter
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: virtualmeter.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/virtualmeter'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'    
+      deprecated: false
+    delete:
+      tags:
+        - virtualmeter
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: virtualmeter.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'      
+      deprecated: false
+    patch:
+      tags:
+        - virtualmeter
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: virtualmeter.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: virtualmeter id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/virtualmeter'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/virtualmeter'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'      
+      deprecated: false
+  /databrowsingtabs:
+    post:
+      tags:
+        - databrowsingtab
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: databrowsingtab.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/databrowsingtab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/databrowsingtab'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'      
+      deprecated: false
+    get:
+      tags:
+        - databrowsingtab
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: databrowsingtab.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/databrowsingtab'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'        
+      deprecated: false
+  '/databrowsingtabs/{id}':
+    get:
+      tags:
+        - databrowsingtab
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: databrowsingtab.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields and include - must be a JSON-encoded string
+            ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/databrowsingtab'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'      
+      deprecated: false
+    delete:
+      tags:
+        - databrowsingtab
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: databrowsingtab.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'      
+      deprecated: false
+    patch:
+      tags:
+        - databrowsingtab
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: databrowsingtab.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: databrowsingtab id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/databrowsingtab'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/databrowsingtab'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'      
+      deprecated: false
+  /observableproperties:
+    get:
+      tags:
+        - observableproperty
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: observableproperty.find
+      parameters:
+        - name: filter
+          in: query
+          description: >-
+            Filter defining fields, where, include, order, offset, and limit -
+            must be a JSON-encoded string ({"something":"value"})
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/observableproperty'
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'        
+      deprecated: false
+  '/timeseries/{varTypeConst}/{varId}/{granularityConst}/{startDate}/{endDate}':
+    get:
+      tags:
+        - timeserie
+      operationId: timeserie.measures
+      parameters:
+        - name: varTypeConst
+          in: path
+          required: true
+          type: string
+        - name: varId
+          in: path
+          required: true
+          type: number
+          format: double
+        - name: granularityConst
+          in: path
+          required: true
+          type: string
+        - name: startDate
+          in: path
+          required: true
+          type: string
+          format: date-time
+        - name: endDate
+          in: path
+          required: true
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              measures:
+                type: array
+                items:
+                  type: object
+        '500':
+          $ref: '#/responses/Standard500ErrorResponse'
+        default:
+          $ref: '#/responses/TotallyUnexpectedResponse'         
+      deprecated: false
+tags:
+  - name: physicaldimension
+  - name: virtualmeter
+  - name: databrowsingtab
+  - name: observableproperty
+  - name: timeserie
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  physicaldimension:
+    properties:
+      name:
+        type: string
+      unit:
+        type: string
+      type:
+        type: string
+      custom:
+        default: true
+        type: string
+      companyid:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - name
+      - unit
+      - type
+    additionalProperties: false
+  x-any:
+    properties: {}
+  virtualmeter:
+    properties:
+      name:
+        type: string
+      lastModification:
+        type: string
+      startDate:
+        type: string
+        format: date-time
+      virtualMeterType:
+        $ref: '#/definitions/VirtualMeterType'
+      physicalDimension:
+        $ref: '#/definitions/physicaldimension'
+      allowedValue:
+        $ref: '#/definitions/AllowedValue'
+      granularity:
+        $ref: '#/definitions/Granularity'
+      aggregationHigherGranularity:
+        $ref: '#/definitions/AggregationHigherGranularity'
+      dailyAggregation:
+        $ref: '#/definitions/DailyAggregation'
+      manageOperands:
+        $ref: '#/definitions/ManageOperands'
+      domainid:
+        type: string
+      companyid:
+        type: string
+      siteid:
+        type: string
+      assetid:
+        type: string
+      restartDate:
+        type: string
+        format: date-time
+      restartRequested:
+        default: false
+        type: boolean
+      restartPending:
+        default: false
+        type: boolean
+      level:
+        type: number
+        format: double
+      id:
+        type: number
+        format: double
+    required:
+      - name
+      - startDate
+      - virtualMeterType
+      - physicalDimension
+      - allowedValue
+      - granularity
+      - aggregationHigherGranularity
+      - dailyAggregation
+      - manageOperands
+    additionalProperties: false
+  databrowsingtab:
+    properties:
+      account:
+        type: string
+      name:
+        type: string
+      ordernumb:
+        type: number
+        format: double
+      configinfo:
+        type: object
+      domainid:
+        type: string
+      companyid:
+        type: string
+      siteid:
+        type: string
+      assetid:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - account
+      - name
+    additionalProperties: false
+  observableproperty:
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+      value:
+        type: object
+      unitTarget:
+        type: string
+      domainid:
+        type: string
+      companyid:
+        type: string
+      siteid:
+        type: string
+      assetid:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - name
+      - type
+      - value
+      - unitTarget
+    additionalProperties: false
+  VirtualMeterType:
+    properties:
+      name:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - name
+    additionalProperties: false
+  AllowedValue:
+    properties:
+      value:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - value
+    additionalProperties: false
+  Granularity:
+    properties:
+      sampling:
+        type: string
+      minutes:
+        type: number
+        format: double
+      id:
+        type: number
+        format: double
+    required:
+      - sampling
+    additionalProperties: false
+  AggregationHigherGranularity:
+    properties:
+      type:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - type
+    additionalProperties: false
+  DailyAggregation:
+    properties:
+      option:
+        type: string
+      sumHour:
+        type: number
+        format: double
+      id:
+        type: number
+        format: double
+    required:
+      - option
+      - sumHour
+    additionalProperties: false
+  ManageOperands:
+    properties:
+      mode:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - mode
+    additionalProperties: false
+  ErrorMessage:
+    title: MultiDeviceErrorMessage
+    description: An error message with a long and a short description
+    required:
+      - longMessage
+      - shortMessage
+    properties:
+      longMessage:
+        description: A long error description
+        type: string
+      shortMessage:
+        description: A short error description
+        type: string
+    additionalProperties: false    
+  MultilingualErrorMessage:
+    title: MultiLingualMultiDeviceErrorMessage
+    description: An multilingual error message (hashmap) with a long and a short description
+    additionalProperties:
+      $ref: '#/definitions/ErrorMessage'
+    properties:
+      defaultLanguage:
+        $ref: '#/definitions/ErrorMessage'
+    example:
+      defaultLanguage:
+        longMessage: We're deeply sorry but an error occured
+        shortMessage: Error
+      fr:
+        longMessage: Nous sommes désolé mais une erreur est survenu
+        shortMessage: Erreur
+  Error:
+    title: MultiLingualMultiDeviceError
+    description: Give full information about the problem
+    required:
+      - code
+      - message
+    properties:
+      code:
+        description: A human readable code (death to numeric error codes!)
+        type: string
+        enum:
+          - DBERR
+          - NTERR
+          - UNERR
+        example: UNERR
+      message:
+        $ref: '#/definitions/MultilingualErrorMessage'
+responses:
+  Standard500ErrorResponse:
+    description: An unexpected error occured.
+    headers:
+      X-Rate-Limit-Remaining:
+        description: How many calls consumer can do
+        type: integer
+      X-Rate-Limit-Reset:
+        description: When rate limit will be reset
+        type: string
+        format: date-time
+    schema:
+      $ref: '#/definitions/Error'
+  TotallyUnexpectedResponse:
+    description: A totally unexpected response
+    headers:
+      X-Rate-Limit-Remaining:
+        description: How many calls consumer can do
+        type: integer
+      X-Rate-Limit-Reset:
+        description: When rate limit will be reset
+        type: string
+        format: date-time
